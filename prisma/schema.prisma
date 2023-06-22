@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model invoice {
+  InvoiceId     Int       @id @default(autoincrement())
+  CustomerId    Int?
+  InvoiceNumber String?   @db.VarChar(20)
+  InvoiceDate   DateTime? @db.Date
+  DueDate       DateTime? @db.Date
+  TotalAmount   Decimal?  @db.Decimal(10, 2)
+  Status        String?   @db.VarChar(20)
+  CreatedDate   DateTime? @db.Date
+  ModifiedDate  DateTime? @db.Date
+
+  @@map("invoice")
+}
