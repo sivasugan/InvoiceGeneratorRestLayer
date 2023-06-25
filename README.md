@@ -7,7 +7,7 @@
     npm install
 4.Configure the corresponding database connection string in the .env file. Open the .env file located in the root folder of the project and update the DatabaseString variable with your desired database connection string.
     DATABASE_URL=your_database_connection_string
-5.Run the command : npx prisma generate
+5.Run the command : npx prisma generate -- This generate prisma schema file
 6.Start the application by running the following command:
     npm run local
 
